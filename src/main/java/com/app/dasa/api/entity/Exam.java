@@ -1,14 +1,12 @@
 package com.app.dasa.api.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@Builder
 @NoArgsConstructor
 public class Exam {
 
@@ -32,6 +30,13 @@ public class Exam {
         this.nome = nome;
         this.tipo = tipo;
         this.status = true;
+    }
+
+    public Exam(Long id, @NonNull String nome, @NonNull String tipo, @NonNull Boolean status){
+        this.id = id;
+        this.nome = nome;
+        this.tipo = tipo;
+        this.status = status;
     }
 
 }
