@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    container_name: mysql_local
+    image: mysql:5.7
+    volumes:
+      - ./dasa_db:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: "test"
+      MYSQL_DATABASE: "dasa"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "test"
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "1000:3306"
